@@ -13,6 +13,8 @@ class MainViewModel @Inject constructor(private val bugsRepository: BugsReposito
     private val _bugs = MutableLiveData<List<Bug>>()
     val bugs: LiveData<List<Bug>> get() = _bugs
 
+    private val _openBugDetails = MutableLiveData<Int>()
+    val openBugDetails: LiveData<Int> get() = _openBugDetails
 
     init {
         viewModelScope.launch {
@@ -20,7 +22,7 @@ class MainViewModel @Inject constructor(private val bugsRepository: BugsReposito
         }
     }
 
-    fun onBugItemClicked(bugId : Int) {
-        TODO("onBugItemClicked")
+    fun onBugItemClicked(bugId: Int) {
+        _openBugDetails.value = bugId
     }
 }

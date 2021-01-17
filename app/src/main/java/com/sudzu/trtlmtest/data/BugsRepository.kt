@@ -14,4 +14,6 @@ class BugsRepository @Inject constructor(
         db.bugsDao().insertBugs(bugs)
         return bugs
     }
+
+    suspend fun getBug(bugId: Int) = db.bugsDao().getBugById(bugId)
 }

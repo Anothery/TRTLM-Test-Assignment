@@ -2,6 +2,7 @@ package com.sudzu.trtlmtest.di
 
 import androidx.lifecycle.ViewModel
 import com.sudzu.trtlmtest.data.BugsRepository
+import com.sudzu.trtlmtest.ui.bugdetails.BugDetailsViewModel
 import com.sudzu.trtlmtest.ui.main.MainViewModel
 import dagger.MapKey
 import dagger.Module
@@ -26,6 +27,12 @@ class ViewModelModule {
     @ViewModelKey(MainViewModel::class)
     internal fun provideMainViewModel(bugsRepository: BugsRepository): ViewModel =
         MainViewModel(bugsRepository)
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(BugDetailsViewModel::class)
+    internal fun provideBugDetailsViewModel(bugsRepository: BugsRepository): ViewModel =
+        BugDetailsViewModel(bugsRepository)
 
 }
 

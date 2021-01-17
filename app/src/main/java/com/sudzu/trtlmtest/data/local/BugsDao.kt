@@ -12,7 +12,7 @@ interface BugsDao {
     suspend fun getBugs(): List<Bug>
 
     @Query("SELECT * FROM bugs WHERE id = :id")
-    suspend fun getBugById(id: Int): Bug
+    suspend fun getBugById(id: Int): Bug?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBug(bug: Bug)

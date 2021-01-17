@@ -1,5 +1,6 @@
 package com.sudzu.trtlmtest.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.sudzu.trtlmtest.R
 import com.sudzu.trtlmtest.databinding.ActivityMainBinding
+import com.sudzu.trtlmtest.ui.bugdetails.BugDetailsActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
@@ -25,6 +27,12 @@ class MainActivity : DaggerAppCompatActivity(R.layout.activity_main) {
         setContentView(binding.root)
         initBugsList()
         viewModel.bugs.observe(this, { adapter?.setBugs(it) })
+        viewModel.openBugDetails.observe(this, {
+            val intent = Intent(this, BugDetailsActivity::class.java)
+            intent.putExtra(BugDetailsActivity.BUG_ID, it)
+            startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        })
     }
 
     private fun initBugsList() {
