@@ -2,6 +2,7 @@ package com.sudzu.trtlmtest.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +27,15 @@ class MainActivity : DaggerAppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initBugsList()
-        viewModel.bugs.observe(this, { adapter?.setBugs(it) })
+
+        binding.rvBugs.visibility = View.GONE
+        binding.progressBar.visibility = View.VISIBLE
+
+        viewModel.bugs.observe(this, {
+            binding.rvBugs.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.GONE
+            adapter?.setBugs(it)
+        })
         viewModel.openBugDetails.observe(this, {
             val intent = Intent(this, BugDetailsActivity::class.java)
             intent.putExtra(BugDetailsActivity.BUG_ID, it)
