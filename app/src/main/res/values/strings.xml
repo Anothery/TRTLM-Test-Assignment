@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Транстелематика тест</string>
+    <string name="app_name">TRTLM Test</string>
+    <string name="action_button_sort">Sort</string>
+    <string name="action_button_settings">Settings</string>
+    <string name="sort_dialog_title">Choose sort type</string>
+    <string name="service_new_data">There is new data in the server.</string>
 </resources>

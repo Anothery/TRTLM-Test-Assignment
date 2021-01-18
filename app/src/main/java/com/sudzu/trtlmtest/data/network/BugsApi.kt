@@ -8,6 +8,6 @@ interface BugsApi {
     @GET("bug")
     suspend fun getBugs(
         @Query("product") product: String = "Thunderbird",
-        @Query("limit") limit: String = "20"
+        @Query("limit") limit: Int = 20
     ): BugsResponse
 }

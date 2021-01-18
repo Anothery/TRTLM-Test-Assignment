@@ -14,9 +14,14 @@ interface BugsDao {
     @Query("SELECT * FROM bugs WHERE id = :id")
     suspend fun getBugById(id: Int): Bug?
 
+
+    @Query("SELECT * FROM bugs ORDER BY id DESC LIMIT 1")
+    suspend fun getLatestBug(): Bug?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBug(bug: Bug)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBugs(bugs: List<Bug>)
+
 }

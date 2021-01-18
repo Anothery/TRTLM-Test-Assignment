@@ -12,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TRTLMTest">
-        <activity android:name=".ui.bugdetails.BugDetailsActivity"></activity>
+        <activity android:name=".ui.bugdetails.BugDetailsActivity" />
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".utils.checkdataservice.CheckDataService" />
     </application>
 
 </manifest>
