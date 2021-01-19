@@ -2,4 +2,4 @@
 
 ![](sample.gif)
 
-Стек: Kotlin, Retrofit, Gson, Room, Dagger, Coroutines
+Стек: Kotlin, Retrofit, Gson, Room, Dagger, Coroutines, JUnit5, MockK, Espresso
