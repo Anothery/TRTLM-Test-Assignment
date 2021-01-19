@@ -5,7 +5,7 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import com.sudzu.trtlmtest.R
-import com.sudzu.trtlmtest.data.BugsRepository
+import com.sudzu.trtlmtest.data.BugsDataRepository
 import com.sudzu.trtlmtest.utils.toast
 import dagger.android.DaggerService
 import kotlinx.coroutines.CoroutineScope
@@ -35,7 +35,7 @@ class CheckDataService : DaggerService() {
     }
 
     @Inject
-    lateinit var bugsRepository: BugsRepository
+    lateinit var bugsRepository: BugsDataRepository
 
     override fun onCreate() {
         super.onCreate()

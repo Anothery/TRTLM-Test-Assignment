@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sudzu.trtlmtest.data.BugsRepo
+import com.sudzu.trtlmtest.data.BugsRepository
 import com.sudzu.trtlmtest.data.local.AppPreferences
 import com.sudzu.trtlmtest.data.model.Bug
 import com.sudzu.trtlmtest.utils.BugsSortType
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
-    private val bugsRepository: BugsRepo,
+    private val bugsRepository: BugsRepository,
     private val mainAppPreferences: AppPreferences
 ) : ViewModel() {
     private val _bugs = MutableLiveData<List<Bug>>()

@@ -1,7 +1,7 @@
 package com.sudzu.trtlmtest.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.sudzu.trtlmtest.data.BugsRepo
+import com.sudzu.trtlmtest.data.BugsRepository
 import com.sudzu.trtlmtest.ui.bugdetails.BugDetailsViewModel
 import com.sudzu.trtlmtest.ui.util.InstantExecutorExtension
 import com.sudzu.trtlmtest.ui.util.MainCoroutineRule
@@ -28,7 +28,7 @@ class BugDetailsViewModelTest {
     val instantExecutorRule = InstantTaskExecutorRule()
 
     @RelaxedMockK
-    private lateinit var mockRepository: BugsRepo
+    private lateinit var mockRepository: BugsRepository
 
     private lateinit var testViewModel: BugDetailsViewModel
 

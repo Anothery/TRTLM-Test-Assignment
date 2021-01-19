@@ -1,7 +1,7 @@
 package com.sudzu.trtlmtest.di
 
 import androidx.lifecycle.ViewModel
-import com.sudzu.trtlmtest.data.BugsRepository
+import com.sudzu.trtlmtest.data.BugsDataRepository
 import com.sudzu.trtlmtest.data.local.MainAppPreferences
 import com.sudzu.trtlmtest.ui.bugdetails.BugDetailsViewModel
 import com.sudzu.trtlmtest.ui.main.MainViewModel
@@ -27,7 +27,7 @@ class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     internal fun provideMainViewModel(
-        bugsRepository: BugsRepository,
+        bugsRepository: BugsDataRepository,
         mainAppPreferences: MainAppPreferences
     ): ViewModel =
         MainViewModel(bugsRepository, mainAppPreferences)
@@ -35,7 +35,7 @@ class ViewModelModule {
     @Provides
     @IntoMap
     @ViewModelKey(BugDetailsViewModel::class)
-    internal fun provideBugDetailsViewModel(bugsRepository: BugsRepository): ViewModel =
+    internal fun provideBugDetailsViewModel(bugsRepository: BugsDataRepository): ViewModel =
         BugDetailsViewModel(bugsRepository)
 
 }

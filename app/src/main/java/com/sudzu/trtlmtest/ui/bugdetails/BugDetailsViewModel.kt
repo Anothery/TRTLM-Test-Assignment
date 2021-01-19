@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sudzu.trtlmtest.data.BugsRepo
+import com.sudzu.trtlmtest.data.BugsRepository
 import com.sudzu.trtlmtest.data.model.Bug
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class BugDetailsViewModel @Inject constructor(private val bugsRepository: BugsRepo) :
+class BugDetailsViewModel @Inject constructor(private val bugsRepository: BugsRepository) :
     ViewModel() {
     private val _details = MutableLiveData<Bug>()
     val details: LiveData<Bug> get() = _details
