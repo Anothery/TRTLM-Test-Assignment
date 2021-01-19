@@ -10,11 +10,32 @@ class TestModelGenerator {
     fun generateBug(): Bug {
         return Bug(
             (0 until 9999999).random(),
-            "", "", 0, "", "", "",
-            false, false, false, false, "",
-            "", "", "", "", "", "", "",
-            getRandomString(10),
-            "", "", getRandomString(10), "", "", 0, ""
+            getRandomString(1),
+            getRandomString(1),
+            (0 until 1).random(),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            random.nextBoolean(),
+            random.nextBoolean(),
+            random.nextBoolean(),
+            random.nextBoolean(),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            status = getRandomString(1),
+            getRandomString(1),
+            getRandomString(1),
+            type = getRandomString(10),
+            getRandomString(1),
+            getRandomString(1),
+            (0 until 1).random(),
+            getRandomString(1)
         )
     }
 

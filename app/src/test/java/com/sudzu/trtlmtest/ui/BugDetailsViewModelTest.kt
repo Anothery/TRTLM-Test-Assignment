@@ -2,7 +2,6 @@ package com.sudzu.trtlmtest.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.sudzu.trtlmtest.data.BugsRepo
-import com.sudzu.trtlmtest.data.local.AppPreferences
 import com.sudzu.trtlmtest.ui.bugdetails.BugDetailsViewModel
 import com.sudzu.trtlmtest.ui.util.InstantExecutorExtension
 import com.sudzu.trtlmtest.ui.util.MainCoroutineRule
@@ -30,9 +29,6 @@ class BugDetailsViewModelTest {
 
     @RelaxedMockK
     private lateinit var mockRepository: BugsRepo
-
-    @RelaxedMockK
-    private lateinit var mockAppPreferences: AppPreferences
 
     private lateinit var testViewModel: BugDetailsViewModel
 
